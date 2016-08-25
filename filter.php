@@ -94,14 +94,14 @@ class filter_horizontalclear extends moodle_text_filter {
             self::$globalconfig = get_config('filter_fontawesome');
         }
     }
-    
+
     private function callback(array $matches) {
-		$hrtype = substr($matches[1],3,1);
-		if ($hrtype === "0"){
-			$embed = '<div style="clear:both"></div>'; //hr-0 gives a div with clear:both ie no line is drawn
-		} else {
-			$embed = '<hr style="clear:both">'; //any other following hr just gives hr
-		} 
+        $hrtype = substr($matches[1],3,1);
+        if ($hrtype === "0"){
+            $embed = '<div style="clear:both"></div>'; //hr-0 gives a div with clear:both ie no line is drawn
+        } else {
+            $embed = '<hr style="clear:both">'; //any other following hr just gives hr
+        }
 
         return $embed;
     }
